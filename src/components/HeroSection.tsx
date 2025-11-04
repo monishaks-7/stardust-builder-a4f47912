@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Instagram, Youtube, Twitter, Download } from 'lucide-react';
+import { Github, Linkedin, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Scene3D from './Scene3D';
 import profileImage from '@/assets/profile.jpg';
@@ -8,9 +8,6 @@ const HeroSection = () => {
   const socialLinks = [
     { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
     { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-    { icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
   ];
 
   return (
@@ -53,7 +50,7 @@ const HeroSection = () => {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="text-xl sm:text-2xl text-muted-foreground mb-8"
             >
-              Full Stack Developer | UI/UX Enthusiast | Tech Explorer
+              Frontend Developer | Java Programmer | SQL Enthusiast
             </motion.p>
 
             <motion.div

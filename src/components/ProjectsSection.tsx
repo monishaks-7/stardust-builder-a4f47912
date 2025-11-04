@@ -4,6 +4,8 @@ import { useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import scienceLabImage from '@/assets/project-science-lab.jpg';
+import farmMarketplaceImage from '@/assets/project-farm-marketplace.jpg';
 
 const ProjectsSection = () => {
   const ref = useRef(null);
@@ -23,6 +25,7 @@ const ProjectsSection = () => {
         'Reduced dependency on physical labs',
       ],
       gradient: 'from-primary to-secondary',
+      image: scienceLabImage,
     },
     {
       title: 'Fresh Farm Marketplace',
@@ -37,6 +40,7 @@ const ProjectsSection = () => {
         'Access to fresh, organic produce',
       ],
       gradient: 'from-secondary to-accent',
+      image: farmMarketplaceImage,
     },
   ];
 
@@ -63,11 +67,21 @@ const ProjectsSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
             >
-              <Card className="h-full p-8 card-glow hover:border-primary/50 transition-all duration-300 group relative overflow-hidden">
+              <Card className="h-full card-glow hover:border-primary/50 transition-all duration-300 group relative overflow-hidden">
                 {/* Gradient Top Border */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.gradient}`} />
 
-                <div className="space-y-6">
+                {/* Project Image */}
+                <div className="relative h-48 overflow-hidden rounded-t-lg -m-6 mb-0">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+                </div>
+
+                <div className="space-y-6 p-8">
                   {/* Header */}
                   <div>
                     <div className="flex items-start justify-between mb-2">
